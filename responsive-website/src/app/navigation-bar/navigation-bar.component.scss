@@ -1,0 +1,132 @@
+.nav-bar {
+    height: 60px;
+    box-shadow: 0px 2px 12px #00000029;
+    overflow: hidden;
+
+    .nav-bar-content {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 700px;
+        margin: auto;
+        height: 100%;
+    }
+
+    .logo {
+        padding: 0 1em;
+        margin-top: 5px;
+    }
+
+    .toggler {
+        cursor: pointer;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 14px;
+        left: 3em;
+        .icon-bar {
+            width: 22px;
+            height: 2px;
+            background: black;
+            margin: 5px;
+            position: relative;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .logo {
+            position: absolute;
+            width: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+    }
+}
+
+.nav-item {
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    color: initial;
+    text-decoration: initial;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    box-shadow: inset 0px 2px 12px #00000029;
+}
+
+.overlay.open {
+    transition: width 0.3s;
+    width: 100%;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    margin-top: 30px;
+    padding-left: 3em;
+}
+
+.overlay .nav-item {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #394E5D;
+    display: block;
+    transition: 0.3s;
+}
+
+.nav-bar a.nav-item.active:after {
+    content: "";
+    position: absolute;
+    top: 35px;
+    background: #4385bc;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    left:calc(50% - 8px);
+}
+
+.nav-bar a.nav-item:hover:before {
+    content: "";
+    position: absolute;
+    top: 35px;
+    background: #adcae2;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    left:calc(50% - 8px);
+    outline: 0; 
+}
+
+.overlay a.nav-item.active:after {
+    content: "";
+    position: absolute;
+    left: -0.5em;
+    background: #4385bc;
+    width: 9px;
+    height: 9px;
+    border-radius: 100%;
+    top: calc(50% - 5px);
+}
+
+.overlay a.nav-item:hover:before {
+    content: "";
+    position: absolute;
+    left: -0.5em;
+    background: #adcae2;
+    width: 9px;
+    height: 9px;
+    border-radius: 100%;
+    top: calc(50% - 5px);
+}

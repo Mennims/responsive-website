@@ -1,0 +1,41 @@
+<div class="nav-bar">
+  <div *ngIf="(mobileBreakpoint$ | async)" class="toggler" (click)="toggleMenu()">
+    <div class="icon-bar" [@hamburguerX]="!(menuOpenSubject | async) ? 'hamburguer' : 'topX'"></div>
+    <div class="icon-bar" [@hamburguerX]="!(menuOpenSubject | async) ? 'hamburguer' : 'hide'"></div>
+    <div class="icon-bar" [@hamburguerX]="!(menuOpenSubject | async) ? 'hamburguer' : 'bottomX'"></div>
+  </div>
+
+  <ng-container *ngIf="(mobileBreakpoint$ | async)">
+    <div class="nav-bar-content">
+      <ng-container *ngTemplateOutlet="logo"></ng-container>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="!(mobileBreakpoint$ | async)">
+    <ng-container *ngTemplateOutlet="links"></ng-container>
+  </ng-container>
+</div>
+
+<div class="overlay" [ngClass]="{ 'open': menuOpenSubject | async }">
+  <div class="overlay-content">
+    <ng-container *ngTemplateOutlet="links"></ng-container>
+  </div>
+</div>
+
+<ng-template #links>
+  <div class="nav-bar-content">
+    <a class="nav-item" routerLink="/" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a class="nav-item" routerLink="/products" [routerLinkActive]="['active']">Products</a>
+    
+    <ng-container *ngIf="!(mobileBreakpoint$ | async)">
+      <ng-container *ngTemplateOutlet="logo"></ng-container>
+    </ng-container>
+
+    <a class="nav-item" routerLink="/blog" [routerLinkActive]="['active']">Blog</a>
+    <a class="nav-item" routerLink="/contact" [routerLinkActive]="['active']">Contact</a>
+  </div>
+</ng-template>
+
+<ng-template #logo>
+  <a class="nav-item logo" routerLink="/"><img src="../../assets/Logo.svg"></a>
+</ng-template>
