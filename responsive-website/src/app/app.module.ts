@@ -11,12 +11,20 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
 import { WebsiteService } from './website.service';
+import { ProductsPageComponent } from './products-page/products-page.component';
+import { BlogPageComponent } from './blog-page/blog-page.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
+import { PageNotFoundPageComponent } from './page-not-found-page/page-not-found-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationBarComponent,
     HomePageComponent,
+    ProductsPageComponent,
+    BlogPageComponent,
+    ContactPageComponent,
+    PageNotFoundPageComponent,
   ],
   imports: [
     BrowserModule,

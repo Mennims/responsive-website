@@ -8,5 +8,20 @@
     height: 60px;
     width: 100%;
     bottom: 0px;
-    background-color: blue;
+    background: #4296CB 0% 0% no-repeat padding-box;
+    display: flex;
+    align-items: center;
+    
+    .logo {
+        margin-left: 13%;
+        @media (max-width: 768px) {
+            margin-left: 5%;
+        }
+    }
+
+    span {
+        margin-left: 41px;
+        font-size: 14px;
+        color: #ffffff;
+    }
 }
