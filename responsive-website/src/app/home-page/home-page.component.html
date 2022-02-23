@@ -5,13 +5,17 @@
             sapien a, aliquet ipsum
         </span>
     </div>
-    <img src="../../assets/56256.png">
+    <div class="image-wrapper">
+        <img src="../../assets/56256.png">
+    </div>
 </div>
 
 <div class="container-2">
     <span class="heading">Lorem ipsum something</span>
     <div class="content">
-        <img src="../../assets/56217.png">
+        <div class="image-wrapper">
+            <img src="../../assets/56217.png">
+        </div>
         <div class="paragraph-container">
             <span class="paragraph-heading">New Product, new Story</span>
             <p class="paragraph">
@@ -19,5 +23,47 @@
             </p>
         </div>
     </div>
-    
+</div>
+
+<div class="logos-container">
+    <div class="logos-wrapper">
+        <div class="wrapper"><img src="../../assets/logo_number_1.svg"></div>
+        <div class="wrapper"><img src="../../assets/logo_number_1.svg"></div>
+        <div class="wrapper"><img src="../../assets/logo_number_1.svg"></div>
+        <div class="wrapper"><img src="../../assets/logo_number_1.svg"></div>
+        <div class="wrapper"><img src="../../assets/logo_number_1.svg"></div>
+    </div>
+</div>
+
+<div class="blog-posts-container">
+    <div class="blog-posts-wrapper">
+        <div class="wrapper">
+            <div class="image-wrapper"><img src="../../assets/dustin-lee-19667-unsplash.png"></div>
+            <div class="text-wrapper">
+                <span class="title">Blog Title #1</span>
+                <span class="excerpt">Blog excerpt - first lines - for approx two lines</span>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="image-wrapper"><img src="../../assets/dustin-lee-19667-unsplash.png"></div>
+            <div class="text-wrapper">
+                <span class="title">Blog Title #1</span>
+                <span class="excerpt">Blog excerpt - first lines - for approx two lines</span>
+            </div>
+        </div>
+        <div class="wrapper" *ngIf="!(mobileBreakpoint$ | async)">
+            <div class="image-wrapper"><img src="../../assets/dustin-lee-19667-unsplash.png"></div>
+            <div class="text-wrapper">
+                <span class="title">Blog Title #1</span>
+                <span class="excerpt">Blog excerpt - first lines - for approx two lines</span>
+            </div>
+        </div>
+        <div class="wrapper" *ngIf="!(mobileBreakpoint$ | async)">
+            <div class="image-wrapper"><img src="../../assets/dustin-lee-19667-unsplash.png"></div>
+            <div class="text-wrapper">
+                <span class="title">Blog Title #1</span>
+                <span class="excerpt">Blog excerpt - first lines - for approx two lines</span>
+            </div>
+        </div>
+    </div>
 </div>
