@@ -12,4 +12,8 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  readMore() {
+    alert('You have clicked the read more button!');
+  }
+
 }

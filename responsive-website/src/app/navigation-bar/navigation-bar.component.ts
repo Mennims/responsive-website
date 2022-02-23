@@ -1,5 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { WebsiteService } from '../website.service';
 
@@ -42,8 +43,14 @@ export class NavigationBarComponent implements OnInit {
   menuOpenSubject: BehaviorSubject<boolean>;
   mobileBreakpoint$ = this.websiteService.mobileBreakpoint$;
 
-  constructor(private websiteService: WebsiteService) {
+  constructor(
+    private websiteService: WebsiteService,
+    private router: Router
+  ) {
     this.menuOpenSubject = new BehaviorSubject<boolean>(false);
+    router.events.subscribe((route) => {
+      this.closeMenu();
+    });
   }
 
   ngOnInit(): void {
